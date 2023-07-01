@@ -1,6 +1,4 @@
-// helpers.js
-
-let cats = ["Milo", "Otis", "Garfield"];
+const cats = ["Milo", "Otis", "Garfield"];
 
 function destructivelyAppendCat(name) {
   cats.push(name);
@@ -19,25 +17,19 @@ function destructivelyRemoveFirstCat() {
 }
 
 function appendCat(name) {
-  const newCats = cats.slice();
-  newCats.push(name);
-  return newCats;
+  return [...cats, name];
 }
 
 function prependCat(name) {
-  const newCats = cats.slice();
-  newCats.unshift(name);
-  return newCats;
+  return [name, ...cats];
 }
 
 function removeLastCat() {
-  const newCats = cats.slice(0, -1);
-  return newCats;
+  return cats.slice(0, -1);
 }
 
 function removeFirstCat() {
-  const newCats = cats.slice(1);
-  return newCats;
+  return cats.slice(1);
 }
 
 module.exports = {
@@ -49,5 +41,5 @@ module.exports = {
   appendCat,
   prependCat,
   removeLastCat,
-  removeFirstCat
+  removeFirstCat,
 };
